@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Big_Shoulders, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { Analytics } from "@/components/Analytics";
 import "./globals.css";
 
 const bigShoulders = Big_Shoulders({
@@ -37,6 +38,10 @@ export const metadata: Metadata = {
     locale: "es_CL",
     siteName: "Ruta Car",
   },
+  // Se activa solo si Ruta Car entrega el código real de Search Console — no se inventa uno.
+  verification: process.env.NEXT_PUBLIC_GSC_VERIFICATION
+    ? { google: process.env.NEXT_PUBLIC_GSC_VERIFICATION }
+    : undefined,
 };
 
 export default function RootLayout({
@@ -58,6 +63,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );

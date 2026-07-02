@@ -83,7 +83,7 @@ export default function Home() {
           <div className="mt-10">
             <Link
               href="/industrias"
-              className="inline-flex items-center gap-2 font-sans text-sm font-semibold uppercase tracking-wide text-amber hover:underline"
+              className="inline-flex items-center gap-2 font-sans text-sm font-semibold uppercase tracking-wide text-paper hover:text-amber hover:underline"
             >
               Conocer más sobre cada industria →
             </Link>
