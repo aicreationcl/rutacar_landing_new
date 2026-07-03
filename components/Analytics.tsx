@@ -14,6 +14,15 @@ declare global {
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
 /**
+ * Para eventos que no deben acoplarse a un clic específico (ej. una cotización
+ * recién enviada con éxito, no cada intento de envío) — llamar explícitamente
+ * en vez de usar [data-analytics-event], que dispara en cualquier clic.
+ */
+export function trackEvent(name: string, params?: Record<string, unknown>) {
+  window.gtag?.("event", name, params);
+}
+
+/**
  * No hace nada si NEXT_PUBLIC_GA_ID no está configurado (Ruta Car aún no ha
  * entregado su propiedad de GA4). Evita cargar un script roto o inventar un ID.
  *

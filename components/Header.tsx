@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { navegacion } from "@/lib/content/empresa";
 import { MobileMenu } from "@/components/MobileMenu";
-import { WhatsappCta } from "@/components/WhatsappCta";
+import { CotizarCta } from "@/components/cotizador/CotizarCta";
 
 export function Header() {
   return (
@@ -24,7 +24,7 @@ export function Header() {
         </nav>
 
         <div className="hidden md:block">
-          <WhatsappCta label="Cotizar" />
+          <CotizarCta label="Cotizar" />
         </div>
 
         <MobileMenu />

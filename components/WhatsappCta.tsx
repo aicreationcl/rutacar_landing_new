@@ -1,7 +1,22 @@
 import { whatsappUrl } from "@/lib/content/empresa";
 
 /**
- * CTA con relleno sólido (LA-2026-033): nunca solo texto subrayado para una acción clickeable.
+ * Reutilizada por otros CTA del sitio (ej. CotizarCta) para que compartan
+ * exactamente la misma variante de botón (LA-2026-033: relleno sólido, nunca
+ * solo texto subrayado para una acción clickeable).
+ */
+export function ctaClassName(variant: "solid" | "ghost" = "solid", className = ""): string {
+  const base =
+    "inline-flex items-center gap-2 rounded-sm px-6 py-3 font-sans text-sm font-semibold uppercase tracking-wide transition-colors";
+  const styles =
+    variant === "solid"
+      ? "bg-amber text-graphite hover:bg-amber-deep"
+      : "border border-paper/40 text-paper hover:border-paper hover:bg-paper/10";
+
+  return `${base} ${styles} ${className}`;
+}
+
+/**
  * data-analytics-event permite enganchar el evento de clic en el Sprint 2 sin tocar este componente.
  */
 export function WhatsappCta({
@@ -15,20 +30,13 @@ export function WhatsappCta({
   variant?: "solid" | "ghost";
   className?: string;
 }) {
-  const base =
-    "inline-flex items-center gap-2 rounded-sm px-6 py-3 font-sans text-sm font-semibold uppercase tracking-wide transition-colors";
-  const styles =
-    variant === "solid"
-      ? "bg-amber text-graphite hover:bg-amber-deep"
-      : "border border-paper/40 text-paper hover:border-paper hover:bg-paper/10";
-
   return (
     <a
       href={whatsappUrl(mensaje)}
       target="_blank"
       rel="noopener noreferrer"
       data-analytics-event="whatsapp_click"
-      className={`${base} ${styles} ${className}`}
+      className={ctaClassName(variant, className)}
     >
       <WhatsappIcon />
       {label}

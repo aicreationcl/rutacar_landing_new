@@ -2,6 +2,7 @@ import Link from "next/link";
 import { tipologias, industrias } from "@/lib/content/tipologias";
 import { TipologiaDiagram } from "@/components/TipologiaDiagram";
 import { WhatsappCta } from "@/components/WhatsappCta";
+import { CotizarCta } from "@/components/cotizador/CotizarCta";
 
 export default function Home() {
   return (
@@ -20,7 +21,7 @@ export default function Home() {
             específicas del cliente.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
-            <WhatsappCta label="Cotizar una carrocería" />
+            <CotizarCta label="Cotizar una carrocería" />
             <Link
               href="/carrocerias"
               className="inline-flex items-center gap-2 rounded-sm border border-paper/40 px-6 py-3 font-sans text-sm font-semibold uppercase tracking-wide text-paper hover:border-amber hover:text-amber"

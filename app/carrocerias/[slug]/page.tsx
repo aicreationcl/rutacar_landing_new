@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { PageHero } from "@/components/PageHero";
 import { TipologiaDiagram } from "@/components/TipologiaDiagram";
 import { WhatsappCta } from "@/components/WhatsappCta";
+import { CotizarCta } from "@/components/cotizador/CotizarCta";
 import { getTipologiaBySlug, tipologias } from "@/lib/content/tipologias";
 
 type Props = {
@@ -89,6 +90,7 @@ export default async function TipologiaPage({ params }: Props) {
             ) : null}
 
             <div className="mt-10 flex flex-wrap gap-4">
+              <CotizarCta href={`/cotizador?tipologia=${tipologia.slug}`} label="Cotizar esta carrocería" />
               <WhatsappCta mensaje={`Hola, quiero cotizar una carrocería ${tipologia.nombre}`} />
               <Link
                 href="/carrocerias"

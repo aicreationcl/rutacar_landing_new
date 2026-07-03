@@ -27,5 +27,6 @@ export const navegacion = [
   { href: "/nosotros", label: "Nosotros" },
   { href: "/industrias", label: "Industrias" },
   { href: "/carrocerias", label: "Carrocerías" },
+  { href: "/cotizador", label: "Cotizador" },
   { href: "/contacto", label: "Contacto" },
 ] as const;
