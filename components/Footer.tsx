@@ -38,7 +38,7 @@ export function Footer() {
       </div>
 
       <div className="border-t border-paper/10 px-6 py-4 text-center font-mono text-xs text-paper/60">
-        © {new Date().getFullYear()} Ruta Car. Todos los derechos reservados.
+        © {new Date().getFullYear()} Dvlpr_Chris. Todos los derechos reservados.
       </div>
     </footer>
   );
