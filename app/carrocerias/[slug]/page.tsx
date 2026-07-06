@@ -5,6 +5,7 @@ import { PageHero } from "@/components/PageHero";
 import { TipologiaDiagram } from "@/components/TipologiaDiagram";
 import { WhatsappCta } from "@/components/WhatsappCta";
 import { CotizarCta } from "@/components/cotizador/CotizarCta";
+import { PrecalificacionSection } from "@/components/precalificacion/PrecalificacionSection";
 import { getTipologiaBySlug, tipologias } from "@/lib/content/tipologias";
 
 type Props = {
@@ -102,6 +103,12 @@ export default async function TipologiaPage({ params }: Props) {
           </div>
         </div>
       </section>
+
+      <PrecalificacionSection
+        heading="¿Prefieres que te contactemos primero?"
+        description="Si no estás seguro de las especificaciones técnicas, déjanos tus datos y te ayudamos a definirlas — una alternativa más rápida que el cotizador completo."
+        tipoVehiculoInicial={tipologia.slug}
+      />
     </>
   );
 }

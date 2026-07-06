@@ -3,6 +3,7 @@ import { tipologias, industrias } from "@/lib/content/tipologias";
 import { TipologiaDiagram } from "@/components/TipologiaDiagram";
 import { WhatsappCta } from "@/components/WhatsappCta";
 import { CotizarCta } from "@/components/cotizador/CotizarCta";
+import { PrecalificacionSection } from "@/components/precalificacion/PrecalificacionSection";
 
 export default function Home() {
   return (
@@ -91,6 +92,11 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <PrecalificacionSection
+        heading="¿No sabes qué carrocería necesitas?"
+        description="Cuéntanos brevemente tu vehículo, industria y plazo — te contactamos con una recomendación, sin tener que completar el cotizador técnico."
+      />
 
       <section className="bg-paper px-6 py-20">
         <div className="mx-auto flex max-w-6xl flex-col items-start gap-6 rounded-sm border border-line bg-plate p-10 sm:flex-row sm:items-center sm:justify-between">

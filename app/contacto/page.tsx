@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
 import { WhatsappCta } from "@/components/WhatsappCta";
 import { empresa } from "@/lib/content/empresa";
+import { PrecalificacionSection } from "@/components/precalificacion/PrecalificacionSection";
 
 export const metadata: Metadata = {
   title: "Contacto",
@@ -42,6 +43,11 @@ export default function ContactoPage() {
           </div>
         </div>
       </section>
+
+      <PrecalificacionSection
+        heading="Cuéntanos qué necesitas"
+        description="Déjanos tus datos y te contactamos apenas revisemos tu solicitud."
+      />
     </>
   );
 }
