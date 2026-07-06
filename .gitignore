@@ -37,6 +37,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# playwright-cli (artefactos de verificación manual, no versionar)
+.playwright-cli/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

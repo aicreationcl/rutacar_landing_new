@@ -61,6 +61,10 @@ export function CotizadorWizard() {
       return;
     }
 
+    // Paso validado y completado — evento dormido hasta que Ruta Car entregue
+    // NEXT_PUBLIC_GA_ID (ver Analytics.tsx), habilita medir abandono por paso.
+    trackEvent("cotizador_paso_completado", { paso: estado.paso, tipologia_slug: estado.datos.tipologiaSlug });
+
     if (estado.paso < TOTAL_PASOS) {
       dispatch({ tipo: "SIGUIENTE_PASO" });
     } else {
