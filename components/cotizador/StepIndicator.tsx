@@ -16,7 +16,7 @@ export function StepIndicator({ pasoActual }: { pasoActual: number }) {
                 activo
                   ? "bg-amber text-graphite"
                   : completado
-                    ? "bg-ink text-paper"
+                    ? "bg-graphite text-white"
                     : "border border-line text-ink-muted"
               }`}
             >

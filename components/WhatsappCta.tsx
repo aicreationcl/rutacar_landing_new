@@ -11,7 +11,7 @@ export function ctaClassName(variant: "solid" | "ghost" = "solid", className = "
   const styles =
     variant === "solid"
       ? "bg-amber text-graphite hover:bg-amber-deep"
-      : "border border-paper/40 text-paper hover:border-paper hover:bg-paper/10";
+      : "border border-white/40 text-white hover:border-white hover:bg-white/10";
 
   return `${base} ${styles} ${className}`;
 }

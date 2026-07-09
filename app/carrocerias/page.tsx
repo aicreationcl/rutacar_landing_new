@@ -32,20 +32,20 @@ export default function CarroceriasPage() {
                   {tipologia.codigo}
                 </span>
                 {tipologia.fichaPendiente ? (
-                  <span className="rounded-sm bg-plate px-2 py-0.5 font-mono text-[10px] uppercase tracking-widest text-ink-muted group-hover:bg-steel group-hover:text-paper/70">
+                  <span className="rounded-sm bg-plate px-2 py-0.5 font-mono text-[10px] uppercase tracking-widest text-ink-muted group-hover:bg-steel group-hover:text-white/70">
                     Ficha en validación
                   </span>
                 ) : null}
               </div>
               <TipologiaDiagram
                 variante={tipologia.diagrama}
-                className="h-20 w-full text-ink group-hover:text-paper"
+                className="h-20 w-full text-ink group-hover:text-white"
               />
               <div>
-                <h2 className="font-display text-xl uppercase leading-tight text-ink group-hover:text-paper">
+                <h2 className="font-display text-xl uppercase leading-tight text-ink group-hover:text-white">
                   {tipologia.nombre}
                 </h2>
-                <p className="mt-1 text-sm text-ink-muted group-hover:text-paper/70">
+                <p className="mt-1 text-sm text-ink-muted group-hover:text-white/70">
                   {tipologia.resumen}
                 </p>
               </div>

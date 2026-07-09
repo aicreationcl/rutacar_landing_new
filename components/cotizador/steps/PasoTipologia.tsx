@@ -33,7 +33,7 @@ export function PasoTipologia({
               aria-checked={seleccionado}
               onClick={() => onChange(tipologia.slug)}
               className={`flex flex-col gap-3 p-5 text-left transition-colors ${
-                seleccionado ? "bg-graphite text-paper" : "bg-paper text-ink hover:bg-graphite hover:text-paper"
+                seleccionado ? "bg-graphite text-white" : "bg-paper text-ink hover:bg-graphite hover:text-white"
               }`}
             >
               <span className={`font-mono text-xs ${seleccionado ? "text-amber" : "text-ink-muted"}`}>

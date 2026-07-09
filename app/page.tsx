@@ -8,7 +8,7 @@ import { PrecalificacionSection } from "@/components/precalificacion/Precalifica
 export default function Home() {
   return (
     <>
-      <section className="cut-edge-down flex min-h-[80svh] flex-col justify-center bg-graphite px-6 py-24 text-paper">
+      <section className="cut-edge-down flex min-h-[80svh] flex-col justify-center bg-graphite px-6 py-24 text-white">
         <div className="mx-auto w-full max-w-6xl">
           <p className="font-mono text-xs uppercase tracking-[0.2em] text-amber">
             Fabricación de carrocerías especializadas · Chile
@@ -16,7 +16,7 @@ export default function Home() {
           <h1 className="mt-6 max-w-3xl text-balance font-display text-5xl uppercase leading-[0.95] tracking-tight sm:text-7xl">
             Carrocerías a medida para trabajo pesado.
           </h1>
-          <p className="mt-6 max-w-xl text-lg text-paper/80">
+          <p className="mt-6 max-w-xl text-lg text-white/80">
             Diseño robusto y funcional para minería, ganadería, gas, construcción
             y carga general. Cada carrocería se fabrica según las necesidades
             específicas del cliente.
@@ -25,7 +25,7 @@ export default function Home() {
             <CotizarCta label="Cotizar una carrocería" />
             <Link
               href="/carrocerias"
-              className="inline-flex items-center gap-2 rounded-sm border border-paper/40 px-6 py-3 font-sans text-sm font-semibold uppercase tracking-wide text-paper hover:border-amber hover:text-amber"
+              className="inline-flex items-center gap-2 rounded-sm border border-white/40 px-6 py-3 font-sans text-sm font-semibold uppercase tracking-wide text-white hover:border-amber hover:text-amber"
             >
               Ver catálogo
             </Link>
@@ -56,9 +56,9 @@ export default function Home() {
                 </span>
                 <TipologiaDiagram
                   variante={tipologia.diagrama}
-                  className="h-16 w-full text-ink group-hover:text-paper"
+                  className="h-16 w-full text-ink group-hover:text-white"
                 />
-                <span className="font-display text-lg uppercase leading-tight text-ink group-hover:text-paper">
+                <span className="font-display text-lg uppercase leading-tight text-ink group-hover:text-white">
                   {tipologia.nombre}
                 </span>
               </Link>
@@ -67,7 +67,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="cut-edge-up bg-steel px-6 py-20 text-paper">
+      <section className="cut-edge-up bg-steel px-6 py-20 text-white">
         <div className="mx-auto max-w-6xl">
           <h2 className="font-display text-3xl uppercase tracking-tight sm:text-4xl">
             Industrias que confían en fabricación a medida
@@ -76,7 +76,7 @@ export default function Home() {
             {industrias.map((industria) => (
               <li
                 key={industria}
-                className="rounded-sm border border-paper/25 px-4 py-2 font-mono text-xs uppercase tracking-widest text-paper/80"
+                className="rounded-sm border border-white/25 px-4 py-2 font-mono text-xs uppercase tracking-widest text-white/80"
               >
                 {industria}
               </li>
@@ -85,7 +85,7 @@ export default function Home() {
           <div className="mt-10">
             <Link
               href="/industrias"
-              className="inline-flex items-center gap-2 font-sans text-sm font-semibold uppercase tracking-wide text-paper hover:text-amber hover:underline"
+              className="inline-flex items-center gap-2 font-sans text-sm font-semibold uppercase tracking-wide text-white hover:text-amber hover:underline"
             >
               Conocer más sobre cada industria →
             </Link>

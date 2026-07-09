@@ -12,6 +12,22 @@
   --amber-deep: #a34a0c;
 }
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+ * Solo las variables de "superficie de contenido" cambian con el tema.
+ * --graphite/--steel/--amber* se mantienen fijas: son las bandas decorativas
+ * siempre oscuras (Header, Footer, PageHero, hovers de tarjeta) cuyo texto
+ * usa clases text-white literales, no --paper (ver componentes que las usan).
+ */
+.dark {
+  --plate: #1c2126;
+  --paper: #101315;
+  --ink: #f2f0ec;
+  --ink-muted: #9aa2a3;
+  --line: #33393d;
+}
+
 @theme inline {
   --color-graphite: var(--graphite);
   --color-steel: var(--steel);
@@ -66,7 +82,7 @@ button:focus-visible,
   top: 0;
   z-index: 100;
   background: var(--graphite);
-  color: var(--paper);
+  color: #fff;
   padding: 0.75rem 1.25rem;
   font-family: var(--font-mono);
   font-size: 0.85rem;
@@ -84,4 +100,13 @@ button:focus-visible,
 
 .cut-edge-up {
   clip-path: polygon(0 2.5vw, 100% 0, 100% 100%, 0 100%);
+}
+
+/* El toggle de tema anima manualmente el clip-path circular sobre estos
+   pseudo-elementos (ver ThemeToggle.tsx); se desactiva el cross-fade por
+   defecto del navegador para que solo se vea el círculo expandiéndose. */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
 }

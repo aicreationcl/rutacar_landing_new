@@ -44,6 +44,17 @@ export const metadata: Metadata = {
     : undefined,
 };
 
+const themeInitScript = `
+(function () {
+  try {
+    var stored = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var theme = stored || (prefersDark ? 'dark' : 'light');
+    document.documentElement.classList.toggle('dark', theme === 'dark');
+  } catch (e) {}
+})();
+`;
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -52,9 +63,13 @@ export default function RootLayout({
   return (
     <html
       lang="es"
+      suppressHydrationWarning
       className={`${bigShoulders.variable} ${plexSans.variable} ${plexMono.variable} h-full`}
     >
-      <body className="flex min-h-full flex-col">
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
+      <body className="flex min-h-full flex-col" suppressHydrationWarning>
         <a href="#contenido" className="skip-link">
           Saltar al contenido
         </a>

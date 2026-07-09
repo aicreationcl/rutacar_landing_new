@@ -4,6 +4,7 @@ import { useRef } from "react";
 import Link from "next/link";
 import { navegacion } from "@/lib/content/empresa";
 import { WhatsappCta } from "@/components/WhatsappCta";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 /**
  * Usa <dialog>.showModal() en vez de un focus-trap escrito a mano: el navegador
@@ -18,32 +19,35 @@ export function MobileMenu() {
       <button
         type="button"
         onClick={() => dialogRef.current?.showModal()}
-        className="md:hidden inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-paper"
+        className="md:hidden inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-white"
         aria-label="Abrir menú de navegación"
       >
         Menú
         <span aria-hidden="true" className="flex flex-col gap-[3px]">
-          <span className="block h-[2px] w-5 bg-paper" />
-          <span className="block h-[2px] w-5 bg-paper" />
-          <span className="block h-[2px] w-5 bg-paper" />
+          <span className="block h-[2px] w-5 bg-white" />
+          <span className="block h-[2px] w-5 bg-white" />
+          <span className="block h-[2px] w-5 bg-white" />
         </span>
       </button>
 
       <dialog
         ref={dialogRef}
-        className="m-0 h-dvh max-h-none w-full max-w-none bg-graphite p-0 text-paper backdrop:bg-graphite/70"
+        className="m-0 h-dvh max-h-none w-full max-w-none bg-graphite p-0 text-white backdrop:bg-graphite/70"
       >
         <div className="flex h-full flex-col p-8">
           <div className="flex items-center justify-between">
             <span className="font-display text-2xl uppercase tracking-wide">Ruta Car</span>
-            <button
-              type="button"
-              onClick={() => dialogRef.current?.close()}
-              className="font-mono text-xs uppercase tracking-widest"
-              aria-label="Cerrar menú"
-            >
-              Cerrar ✕
-            </button>
+            <div className="flex items-center gap-2">
+              <ThemeToggle />
+              <button
+                type="button"
+                onClick={() => dialogRef.current?.close()}
+                className="font-mono text-xs uppercase tracking-widest"
+                aria-label="Cerrar menú"
+              >
+                Cerrar ✕
+              </button>
+            </div>
           </div>
 
           <nav className="mt-12 flex flex-1 flex-col gap-6" aria-label="Navegación principal">
@@ -52,7 +56,7 @@ export function MobileMenu() {
                 key={item.href}
                 href={item.href}
                 onClick={() => dialogRef.current?.close()}
-                className="font-display text-4xl uppercase tracking-wide text-paper hover:text-amber"
+                className="font-display text-4xl uppercase tracking-wide text-white hover:text-amber"
               >
                 {item.label}
               </Link>
